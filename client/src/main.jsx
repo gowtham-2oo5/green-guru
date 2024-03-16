@@ -10,6 +10,7 @@ import LoginUser from "./Pages/LoginPage";
 import RegisterUser from "./Pages/RegistrationPage";
 import Scheme from "./Pages/Scheme";
 import UserHome from './Components/User/UserHome';
+import Applyu from './Components/User/Apply';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/user",
     element: <UserHome />,
+  },
+  {
+    path: "/user/apply",
+    element: <Applyu />,
   }
 ]);
 
