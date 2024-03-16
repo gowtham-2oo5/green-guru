@@ -9,17 +9,13 @@ import Track from "./Components/Home/Track";
 import LoginUser from "./Pages/LoginPage";
 import RegisterUser from "./Pages/RegistrationPage";
 import Scheme from "./Pages/Scheme";
-<<<<<<< HEAD
 import AdminHome from "./Pages/AdminHome";
 import AdminConfirm from "./Pages/AdminConfirmation";
 import UserHome from "./Components/User/UserHome";
 import ManageApplications from "./Components/Admin/ManageApplications";
 import ManageSchemes from "./Components/Admin/ManageSchemes";
 import ManageUsers from "./Components/Admin/ManageUsers";
-=======
-import UserHome from './Components/User/UserHome';
-import Applyu from './Components/User/Apply';
->>>>>>> 344079a297700aa632fb28fb466e8a2a88fab778
+import Applyu from "./Components/User/Apply";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -54,7 +50,6 @@ const router = createBrowserRouter([
     element: <UserHome />,
   },
   {
-<<<<<<< HEAD
     path: "*",
     element: <div>404 Not Found</div>,
   },
@@ -78,11 +73,10 @@ const router = createBrowserRouter([
     path: "/manageSchemes",
     element: <ManageSchemes />,
   },
-=======
+  {
     path: "/user/apply",
     element: <Applyu />,
-  }
->>>>>>> 344079a297700aa632fb28fb466e8a2a88fab778
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

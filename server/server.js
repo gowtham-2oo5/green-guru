@@ -57,6 +57,19 @@ app.get("/get-applications", async (req, res) => {
   }
 });
 
+app.get("/get-application/:app_id", async (req, res) => {
+  try {
+    const id = req.params.app_id;
+    const applicationData = await applications.findById(id).exec();
+    if (!applicationData) {
+      return res.status(404).json({ message: "Application not found" });
+    }
+    res.status(200).json(applicationData);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.get("/get-users", async (req, res) => {
   try {
     const usersData = await users.find().exec();
@@ -115,7 +128,7 @@ app.post("/login-user", async (req, res) => {
 app.post("/open-application", async (req, res) => {
   try {
     const data = req.body;
-    const schemeExists = await schemes.findOne({title: data.title});
+    const schemeExists = await schemes.findOne({ title: data.title });
     if (!schemeExists) {
       return res.status(404).json({ error: "Scheme not found" });
     }
