@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Services from "./Components/Home/Services";
 import Apply from "./Components/Home/Apply";
 import Track from "./Components/Home/Track";
+import LoginUser from "./Pages/LoginPage";
+import RegisterUser from "./Pages/RegistrationPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
   {
     path: "/track",
     element: <Track />,
+  },
+  {
+    path: "/login",
+    element: <LoginUser />,
+  },
+  {
+    path: "/register",
+    element: <RegisterUser />,
   },
 ]);
 
