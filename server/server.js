@@ -75,6 +75,26 @@ app.get("/get-users", async (req, res) => {
 
 //************************************************************************* */
 
+app.post("/admin-verify", async (req, res) => {
+  try {
+    const data = req.body;
+    const admin = await users.findOne({ email: data.email });
+    if (!admin) {
+      return res.status(400).json({ error: "Admin not found" });
+    }
+    const validPassword = await bcrypt.compare(data.password, admin.password);
+    if (!validPassword) {
+      return res.status(400).json({ error: "Invalid password" });
+    }
+    if (admin.role !== "Admin") {
+      return res.status(400).json({ error: "Not an admin" });
+    }
+    res.status(200).json({ message: "Admin verified" });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 app.post("/login-user", async (req, res) => {
   try {
     const data = req.body;
