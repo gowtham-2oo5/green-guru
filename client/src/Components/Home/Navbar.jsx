@@ -183,12 +183,16 @@ export default function App() {
                 </div>
               </div>
               <div className="absolute gap-3 inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button className="bg-green-500 px-7 py-1 rounded-xl text-lg font-semibold text-gray-200 hover:opacity-90">
-                  Login
-                </button>
-                <button className="bg-green-500 px-7 py-1 rounded-xl text-lg font-semibold text-gray-200 hover:opacity-90">
-                  Register
-                </button>
+                <Link to="/login">
+                  <button className="bg-green-500 px-7 py-1 rounded-xl text-lg font-semibold text-gray-200 hover:opacity-90">
+                    Login
+                  </button>
+                </Link>
+                <Link to="/register">
+                  <button className="bg-green-500 px-7 py-1 rounded-xl text-lg font-semibold text-gray-200 hover:opacity-90">
+                    Register
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
