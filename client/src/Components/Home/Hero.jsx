@@ -36,10 +36,19 @@ export default function Example() {
         </div> */}
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+          <div style={{
+            padding: '2rem',
+  background: 'rgba(255, 255, 255, 0.33)',
+  borderRadius: '16px',
+  boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+  backdropFilter: 'blur(9.5px)',
+  WebkitBackdropFilter: 'blur(9.5px)',
+  border: '1px solid rgba(255, 255, 255, 0.17)'
+}}>
+            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl" >
               Discover Schemes that empower you
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-200 font-bold">
+            <p className="mt-6 text-lg leading-8 text-white font-bold">
               Your one stop to know the Schemes.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
@@ -49,6 +58,7 @@ export default function Example() {
               >
                 Go to Services
               </Link>
+              </div>
               {/* <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
                 Learn more <span aria-hidden="true">→</span>
               </a> */}
@@ -77,14 +87,14 @@ export default function Example() {
       {
            scheme.length>0 && scheme.slice(0, 6).map((item) => {
           return (
-            <Link to={`/schemes/${item.title.replace(/\s/g, '-')}`} key={item.title} className="p-4 overflow-hidden">
+            <div key={item.title} className="p-4 overflow-hidden">
             <Card
               image = {item.image}
               title={item.title}
               description={item.description}
               category={item.category}
             />
-            </Link>
+            </div>
           ) 
         }
         )
