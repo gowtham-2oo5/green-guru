@@ -1,2 +1,3 @@
-# suvidha
-A web application that promotes sustainability and empowers users to adopt eco-friendly practices in their daily lives.
+# Suvidha - An E-Governance Innovative
+
+A cutting-edge e-governance solution that facilitates the last-mile online delivery of government services to citizens, ensuring equitable access and convenience for all.
