@@ -16,8 +16,11 @@ import ManageApplications from "./Components/Admin/ManageApplications";
 import ManageSchemes from "./Components/Admin/ManageSchemes";
 import ManageUsers from "./Components/Admin/ManageUsers";
 import Applyu from "./Components/User/Apply";
+<<<<<<< HEAD
 import Tracku from "./Components/User/Track";
 
+=======
+>>>>>>> 1c0dfb8aa1516380ed810abf49f5c7ba3fb3d9c0
 const router = createBrowserRouter([
   {
     path: "/",
@@ -79,10 +82,13 @@ const router = createBrowserRouter([
     path: "/user/apply",
     element: <Applyu />,
   },
+<<<<<<< HEAD
   {
     path: "/user/track",
     element: <Tracku />,
   },
+=======
+>>>>>>> 1c0dfb8aa1516380ed810abf49f5c7ba3fb3d9c0
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
