@@ -9,6 +9,7 @@ import Track from "./Components/Home/Track";
 import LoginUser from "./Pages/LoginPage";
 import RegisterUser from "./Pages/RegistrationPage";
 import Scheme from "./Pages/Scheme";
+import UserHome from './Components/User/UserHome';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "/schemes/:title",
     element: <Scheme />,
+  },
+  {
+    path: "/user",
+    element: <UserHome />,
   }
 ]);
 

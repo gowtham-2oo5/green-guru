@@ -182,7 +182,7 @@ export default function App() {
                   </div>
                 </div>
               </div>
-              <div className="absolute gap-3 inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              {/* <div className="absolute gap-3 inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <Link to="/login">
                   <button className="bg-green-500 px-7 py-1 rounded-xl text-lg font-semibold text-white hover:opacity-90">
                     Login
@@ -193,7 +193,12 @@ export default function App() {
                     Register
                   </button>
                 </Link>
-              </div>
+              </div> */}
+              <img
+                className="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+                src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                alt=""
+              />
             </div>
           </div>
 

@@ -7,7 +7,7 @@ const Track = () => {
   return (
     <>
       <Navbar />
-      <div className="h-max mt-2 flex justify-center">
+      <div className="h-max mt-2 pt-14 flex justify-center">
         <form onSubmit={handleSubmit} className="bg-slate-200 p-3 rounded-lg">
           <div>
             <label

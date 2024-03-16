@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Navbar from "./Navbar";
 import schemes from "../../data/data.json";
+import Footer from "./footer";
 const Apply = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -229,6 +230,7 @@ const Apply = () => {
           </p>
         </div>
       </div>
+      <Footer/>
     </>
   );
 };
