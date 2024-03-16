@@ -1,11 +1,14 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import logo from "../../../public/Suvidha.png";
+import logo from "/Suvidha.png";
 import { useState } from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
+import Services from "./Services";
+import Apply from "./Apply";
+import Track from "./Track";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -16,10 +19,12 @@ export default function App() {
   const [isTrackCurrent, setTrackCurrent] = useState(false);
 
   const navigation = [
-    { name: "Services", to: "/services", current: isServicesCurrent },
-    { name: "Apply", to: "/apply", current: isApplyCurrent },
-    { name: "Track", to: "/track", current: isTrackCurrent },
+    { name: "Services", to: "/", current: isServicesCurrent },
+    { name: "Apply", to: "/", current: isApplyCurrent },
+    { name: "Track", to: "/", current: isTrackCurrent },
   ];
+  const [currentPage, setCurrentPage] = useState("/");
+
   return (
     <Disclosure as="nav" className="bg-transparent border border-b-slate-900">
       {({ open }) => (
@@ -61,6 +66,7 @@ export default function App() {
                           "rounded-md px-3 py-2 text-lg font-medium"
                         )}
                         onClick={() => {
+                          setCurrentPage(item.name);
                           setServicesCurrent(false);
                           setApplyCurrent(false);
                           setTrackCurrent(false);
