@@ -115,11 +115,11 @@ app.post("/login-user", async (req, res) => {
 app.post("/open-application", async (req, res) => {
   try {
     const data = req.body;
-    const schemeExists = await schemes.findById(data.schemeID);
+    const schemeExists = await schemes.findOne({title: data.title});
     if (!schemeExists) {
       return res.status(404).json({ error: "Scheme not found" });
     }
-    const userExists = await users.findById(data.userID);
+    const userExists = await users.findOne(data.email);
     if (!userExists) {
       return res.status(404).json({ error: "User not found" });
     }

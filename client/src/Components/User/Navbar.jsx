@@ -26,8 +26,8 @@ export default function App() {
 
   const navigation = [
     { name: "Services", to: "/services", current: isServicesCurrent },
-    { name: "Apply", to: "/apply", current: isApplyCurrent },
-    { name: "Track", to: "/track", current: isTrackCurrent },
+    { name: "Apply", to: "/user/apply", current: isApplyCurrent },
+    { name: "Track", to: "/user/track", current: isTrackCurrent },
   ];
   return (
     <Disclosure as="nav" className="bg-transparent border border-b-slate-900">

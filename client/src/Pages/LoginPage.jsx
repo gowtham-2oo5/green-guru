@@ -31,7 +31,7 @@ export default function LoginUser() {
   };
 
   return (
-    <>
+    <div>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
@@ -70,12 +70,12 @@ export default function LoginUser() {
                   Password
                 </label>
                 <div className="text-sm">
-                  <a
+                  <div
                     href="#"
                     className="font-semibold text-indigo-600 hover:text-indigo-500"
                   >
                     Forgot password?
-                  </a>
+                  </div>
                 </div>
               </div>
               <div className="mt-2">
@@ -119,6 +119,6 @@ export default function LoginUser() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }

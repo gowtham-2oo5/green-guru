@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
-
+const id = Math.floor(Math.random() * 100000).toString().padStart(5, '0');
 const ApplicationSchema = new mongoose.Schema({
   applicationID: {
     type: String,
-    required: true,
+    unique: true,
+    default: `#-${id}`,
   },
-  schemeID: {
+  title: {
     type: String,
     required: true,
   },
@@ -17,6 +18,7 @@ const ApplicationSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ["Processed", "Processing", "Rejected", "Open"],
+    default: "Open",
   },
 });
 

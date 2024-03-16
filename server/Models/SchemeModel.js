@@ -6,6 +6,7 @@ const SchemesSchema = new Schema({
   title: {
     type: String,
     required: true,
+    unique: true,
   },
   description: {
     type: String,
@@ -14,11 +15,6 @@ const SchemesSchema = new Schema({
   image: {
     type: String,
     required: false,
-  },
-  id: {
-    type: String,
-    required: true,
-    unique: true,
   },
   category: {
     type: String,
