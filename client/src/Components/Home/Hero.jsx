@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import hero from '../../hero_img.avif'
+import hero from "../../hero_img.avif";
 import { Link } from "react-router-dom";
-
-
+import { useState,useEffect } from "react";
+import schemes from "../../data/data.json"
+import Card from "../Card";
 export default function Example() {
+    const [scheme,setScheme] = useState([])
  
+  useEffect(() => {
+    setScheme(schemes)
+  },[])
   return (
     <div className="bg-white">
       <div
@@ -41,7 +44,7 @@ export default function Example() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
-                to="/shop"
+                to="/services"
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 inline-block text-center"
               >
                 Go to Services
@@ -65,6 +68,28 @@ export default function Example() {
           />
         </div>
       </div>
+      {/* Divider Section */}
+      <hr className="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-50 dark:via-neutral-700" />
+      {/* Divider Section ends */}
+      {/* Services Section Starts */}
+      <div className="max-w-2xl pl-7 pt-7 font-bold text-3xl">Services</div>
+      <div className="p-14 grid grid-cols-3">
+      {
+           scheme.length>0 && scheme.slice(0, 6).map((item) => {
+          return (
+            <Link to={`/cards/${item.title}`} key={item.title}>
+            <Card
+              image = {item.image}
+              title={item.title}
+              description={item.description}
+            />
+            </Link>
+          ) 
+        }
+        )
+      }
+      </div>
+      {/* Services Section Ends */}
     </div>
   );
 }

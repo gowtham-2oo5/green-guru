@@ -1,0 +1,74 @@
+[
+    {
+        "title" : "Beti Bachao Beti Padao (BBBP)",
+        "description": "Launched in 2015, Beti Bachao, Beti Padhao (BBBP) is a government initiative in India that translates to \"Save the Girl Child, Educate the Girl Child.\"" ,
+        "eligibility" : "",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/beti%20bachao%20beti%20padao.jpg" ,
+        "id": "",
+        "category": ""
+
+    },
+    {
+        "title" : "Pradhan Mantri Awas Yojana (PMAY)",
+        "description": "This scheme provides financial assistance to eligible families for the construction or renovation of their pucca houses. ",
+        "eligibility" : "Low-income families are categorized into four income groups (LIG, MIG-I, MIG-II, HIG)",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmay.png",
+        "id": "",
+        "category": ""
+
+    },
+    {
+        "title" : "Pradhan Mantri Matritva Vandana Yojana (PMMVY):",
+        "description": "This maternity benefit scheme provides financial assistance to pregnant women and lactating mothers for a period of 1,000 days. ",
+        "eligibility" : "Pregnant women for first live birth, belonging to low-income families.",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmmvy.jpeg",
+        "id": "",
+        "category": ""
+
+    },
+    {
+        "title" : "Ayushman Bharat Yojana (ABY)",
+        "description": "This health insurance scheme provides cashless and hospitalization cover to eligible families.",
+        "eligibility" : "Low-income families identified through Socio-Economic Caste Census (SECC) data.",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/aby.jpeg" ,
+        "id": "",
+        "category": ""
+
+    },
+    {
+        "title" : "Pradhan Mantri Ujjwala Yojana (PMUY)",
+        "description": "This scheme provides LPG connections to eligible low-income families.",
+        "eligibility" : "Women belonging to Below Poverty Line (BPL) households.",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmuy.jpeg",
+        "id": "",
+        "category": ""
+
+    },
+    {
+        "title" : "Pradhan Mantri Kaushal Vikas Yojana (PMKVY)",
+        "description": "This scheme provides skill development training to eligible youth to improve their employability. ",
+        "eligibility" : "Youths between 15-35 years with varying educational backgrounds",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmky.png",
+        "id": "",
+        "category": ""
+
+    },
+    {
+        "title" : "Atal Pension Yojana(APY)",
+        "description": "This voluntary pension scheme provides a pension to subscribers after the age of 60 years.",
+        "eligibility" : "Any citizen of India with Age 18-40 Years.",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/APY.jpeg",
+        "id": "",
+        "category": ""
+
+    },
+    {
+        "title" : "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+        "description": "Promoting financial inclusion, PMJDY offers basic savings bank accounts with no minimum balance requirement.",
+        "eligibility" : "Open to all, encouraging people to participate in the formal banking system.",
+        "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmjdy.jpeg",
+        "id": "",
+        "category": ""
+
+    }
+]
