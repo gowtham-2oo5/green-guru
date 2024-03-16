@@ -9,7 +9,12 @@ import Track from "./Components/Home/Track";
 import LoginUser from "./Pages/LoginPage";
 import RegisterUser from "./Pages/RegistrationPage";
 import Scheme from "./Pages/Scheme";
-import UserHome from './Components/User/UserHome';
+import AdminHome from "./Pages/AdminHome";
+import AdminConfirm from "./Pages/AdminConfirmation";
+import UserHome from "./Components/User/UserHome";
+import ManageApplications from "./Components/Admin/ManageApplications";
+import ManageSchemes from "./Components/Admin/ManageSchemes";
+import ManageUsers from "./Components/Admin/ManageUsers";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -42,7 +47,31 @@ const router = createBrowserRouter([
   {
     path: "/user",
     element: <UserHome />,
-  }
+  },
+  {
+    path: "*",
+    element: <div>404 Not Found</div>,
+  },
+  {
+    path: "/admin",
+    element: <AdminConfirm />,
+  },
+  {
+    path: "/adminHome/",
+    element: <AdminHome />,
+  },
+  {
+    path: "/manageApplications",
+    element: <ManageApplications />,
+  },
+  {
+    path: "/manageUsers",
+    element: <ManageUsers />,
+  },
+  {
+    path: "/manageSchemes",
+    element: <ManageSchemes />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
