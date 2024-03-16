@@ -8,6 +8,7 @@ import Apply from "./Components/Home/Apply";
 import Track from "./Components/Home/Track";
 import LoginUser from "./Pages/LoginPage";
 import RegisterUser from "./Pages/RegistrationPage";
+import Scheme from "./Pages/Scheme";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
     path: "/register",
     element: <RegisterUser />,
   },
+  {
+    path: "/schemes/:title",
+    element: <Scheme />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

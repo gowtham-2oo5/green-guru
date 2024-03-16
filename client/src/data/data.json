@@ -5,7 +5,7 @@
         "eligibility" : "",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/beti%20bachao%20beti%20padao.jpg" ,
         "id": "",
-        "category": ""
+        "category": "Women Empowerment"
 
     },
     {
@@ -14,7 +14,7 @@
         "eligibility" : "Low-income families are categorized into four income groups (LIG, MIG-I, MIG-II, HIG)",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmay.png",
         "id": "",
-        "category": ""
+        "category": "Housing"
 
     },
     {
@@ -23,7 +23,7 @@
         "eligibility" : "Pregnant women for first live birth, belonging to low-income families.",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmmvy.jpeg",
         "id": "",
-        "category": ""
+        "category": "Women Empowerment"
 
     },
     {
@@ -32,7 +32,7 @@
         "eligibility" : "Low-income families identified through Socio-Economic Caste Census (SECC) data.",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/aby.jpeg" ,
         "id": "",
-        "category": ""
+        "category": "Healthcare"
 
     },
     {
@@ -41,7 +41,7 @@
         "eligibility" : "Women belonging to Below Poverty Line (BPL) households.",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmuy.jpeg",
         "id": "",
-        "category": ""
+        "category": "Women Empowerment"
 
     },
     {
@@ -50,7 +50,7 @@
         "eligibility" : "Youths between 15-35 years with varying educational backgrounds",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmky.png",
         "id": "",
-        "category": ""
+        "category": "Skill Development"
 
     },
     {
@@ -59,7 +59,7 @@
         "eligibility" : "Any citizen of India with Age 18-40 Years.",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/APY.jpeg",
         "id": "",
-        "category": ""
+        "category": "Finance"
 
     },
     {
@@ -68,7 +68,7 @@
         "eligibility" : "Open to all, encouraging people to participate in the formal banking system.",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/pmjdy.jpeg",
         "id": "",
-        "category": ""
+        "category": "Finance"
 
     }
 ]

@@ -77,11 +77,12 @@ export default function Example() {
       {
            scheme.length>0 && scheme.slice(0, 6).map((item) => {
           return (
-            <Link to={`/cards/${item.title}`} key={item.title}>
+            <Link to={`/schemes/${item.title.replace(/\s/g, '-')}`} key={item.title} className="p-4 overflow-hidden">
             <Card
               image = {item.image}
               title={item.title}
               description={item.description}
+              category={item.category}
             />
             </Link>
           ) 
