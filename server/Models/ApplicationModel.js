@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
-const id = Math.floor(Math.random() * 100000).toString().padStart(5, '0');
 const ApplicationSchema = new mongoose.Schema({
   applicationID: {
     type: String,
     unique: true,
-    default: `#-${id}`,
+    default: Math.floor(Math.random() * 100000).toString().padStart(5, '0')
   },
   title: {
     type: String,

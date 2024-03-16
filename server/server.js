@@ -69,6 +69,18 @@ app.get("/get-users", async (req, res) => {
   }
 });
 
+app.get("/get-applications/:userID", async (req, res) => {
+  try {
+    const applicationsData = await applications.find({ userID: req.params.userID });
+    if (applicationsData.length === 0) {
+      return res.status(404).json({ message: "No applications open" });
+    }
+    res.status(200).json(applicationsData);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
 //************************************************************************* */
 
 //* POST ROUTES
@@ -115,7 +127,7 @@ app.post("/login-user", async (req, res) => {
 app.post("/open-application", async (req, res) => {
   try {
     const data = req.body;
-    const schemeExists = await schemes.findOne({title: data.title});
+    const schemeExists = await schemes.findOne({ title: data.title });
     if (!schemeExists) {
       return res.status(404).json({ error: "Scheme not found" });
     }
@@ -125,7 +137,7 @@ app.post("/open-application", async (req, res) => {
     }
     const newApplication = await new applications(data);
     newApplication.save();
-    res.status(200).json({ message: "Application opened" });
+    res.status(200).json(newApplication);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

@@ -5,12 +5,13 @@ import Navbar from "./Navbar";
 import schemes from "../../data/data.json";
 import Footer from "./footer";
 import UserHome from "./UserHome";
+import { useNavigate } from "react-router-dom";
 const Apply = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
-  const [gender, setGender] = useState("");
+  const [scheme, setScheme] = useState("");
   const [phone, setPhone] = useState("");
   const [formData, setFormData] = useState({});
   const [data, setData] = useState([]);
@@ -23,22 +24,17 @@ const Apply = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormData({
-      name: name,
-      email: email,
-      password: password,
-      age: age,
-      gender: gender,
-      phone: phone,
-    });
-    console.log(formData);
     console.log("Form submitted");
     try {
       const res = await axios.post(
         "http://localhost:3030/open-application",
-        formData
+        { userID: userData.email, title: scheme }
       );
-      console.log(res.status);
+      console.log(res);
+      if(res.status === 200){
+        alert("Application submitted successfully")
+        navigate("/user/track",);
+      }
     } catch (error) {
       console.log(error.message);
     }
@@ -67,7 +63,7 @@ const Apply = () => {
                   id="service"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   onChange={(e) => {
-                    setGender(e.target.value);
+                    setScheme(e.target.value);
                     console.log(e.target.value);
                   }}
                 >
