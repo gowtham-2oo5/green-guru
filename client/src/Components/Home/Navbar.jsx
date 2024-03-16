@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import logo from "../../../public/Suvidha.png";
+import logo from "../../Suvidha.png";
 import { useState } from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
@@ -10,10 +10,20 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
+
 export default function App() {
   const [isServicesCurrent, setServicesCurrent] = useState(false);
   const [isApplyCurrent, setApplyCurrent] = useState(false);
   const [isTrackCurrent, setTrackCurrent] = useState(false);
+  // const serviceChange = () => {
+  //   setServicesCurrent(true);
+  // }
+  // const applyChange = () => {
+  //   setApplyCurrent(true);
+  // }
+  // const trackChange = () => {
+  //   setTrackCurrent(true);
+  // }
 
   const navigation = [
     { name: "Services", to: "/services", current: isServicesCurrent },
@@ -42,7 +52,7 @@ export default function App() {
                 <div className="flex scale-150">
                   <Link to="/">
                     <img
-                      className=" h-12 w-auto scale-150"
+                      className=" h-12 w-auto scale-100"
                       src={logo}
                       alt="Your Company"
                     />
@@ -104,7 +114,7 @@ export default function App() {
                         leaveFrom="transform opacity-100 scale-100"
                         leaveTo="transform opacity-0 scale-95"
                       >
-                        <Menu.Items className="absolute top-12 w-56 origin-top-right rounded-md bg-white ">
+                        <Menu.Items className="absolute top-12 z-10 w-56 origin-top-right rounded-md bg-white ">
                           <div className="py-1">
                             <Menu.Item>
                               {({ active }) => (
