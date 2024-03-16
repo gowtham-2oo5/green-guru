@@ -10,26 +10,74 @@ import {
   TableRow,
   Paper,
   IconButton,
-  Button,
 } from "@mui/material";
-
-import EditIcon from "@mui/icons-material/Edit";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import DeleteIcon from "@mui/icons-material/Delete";
+import DoneIcon from "@mui/icons-material/Done";
+import axios from "axios";
 const ManageApplications = () => {
-  const [schemes, setSchemes] = useState([]);
+  const [applications, setapplications] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3030/get-schemes")
-      .then((response) => response.json())
-      .then((data) => {
-        setSchemes(data);
-      })
-      .catch((error) => console.error("Error:", error));
-  }, []);
+    const data = async () => {
+      try {
+        const res = await axios.get("http://localhost:3030/get-applications");
+        setapplications(res.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    data();
+  }, [applications]);
 
-  useEffect(() => {
-    console.log(schemes);
-  }, [schemes]);
+  const handleRejectApp = async (id) => {
+    try {
+      const app = await axios.get(
+        `http://localhost:3030/get-application/${id}`
+      );
+      app.status = "Rejected";
+      const res = await axios.put(
+        `http://localhost:3030/update-application-status/${id}`,
+        app
+      );
+      if (res.status === 200) alert("Application Rejected");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleProcessApp = async (id) => {
+    try {
+      const app = await axios.get(
+        `http://localhost:3030/get-application/${id}`
+      );
+      app.status = "Processing";
+      const res = await axios.put(
+        `http://localhost:3030/update-application-status/${id}`,
+        app
+      );
+      if (res.status === 200) alert("Application in Processing stage");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleAcceptApp = async (id) => {
+    try {
+      const app = await axios.get(
+        `http://localhost:3030/get-application/${id}`
+      );
+      app.status = "Accepted/Done";
+      const res = await axios.put(
+        `http://localhost:3030/update-application-status/${id}`,
+        app
+      );
+      if (res.status === 200) alert("Application Processing done");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <Navbar></Navbar>
@@ -41,44 +89,92 @@ const ManageApplications = () => {
           padding: "1rem",
         }}
       >
-        <Typography variant="h3">Manage Schemes here</Typography>
-        <Button variant="contained" color="primary">
-          Add Scheme
-        </Button>
+        <Typography variant="h3">Manage Applications here</Typography>
       </div>
 
-      <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>Title</TableCell>
-              <TableCell>Category</TableCell>
-              <TableCell>Edit</TableCell>
-              <TableCell>Delete</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {schemes.map((scheme) => (
-              <TableRow key={scheme.title}>
-                <TableCell component="th" scope="row">
-                  {scheme.title}
-                </TableCell>
-                <TableCell>{scheme.category}</TableCell>
-                <TableCell>
-                  <IconButton color="primary" aria-label="edit scheme">
-                    <EditIcon />
-                  </IconButton>
-                </TableCell>
-                <TableCell>
-                  <IconButton color="secondary" aria-label="delete scheme">
-                    <DeleteIcon />
-                  </IconButton>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <div className="flex items-center justify-center">
+        <div className="w-5/6">
+          <TableContainer
+            component={Paper}
+            style={{
+              borderColor: "black",
+              border: "2px solid black",
+              borderCollapse: "collapse",
+            }}
+          >
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+              <TableHead>
+                <TableRow>
+                  <TableCell style={{ border: "1px solid black" }}>
+                    Application ID
+                  </TableCell>
+                  <TableCell style={{ border: "1px solid black" }}>
+                    Service Title
+                  </TableCell>
+                  <TableCell style={{ border: "1px solid black" }}>
+                    User mail
+                  </TableCell>
+                  <TableCell style={{ border: "1px solid black" }}>
+                    Application Status
+                  </TableCell>
+                  <TableCell style={{ border: "1px solid black" }}>
+                    Actions
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {applications.map((application) => (
+                  <TableRow key={application.applicationID}>
+                    <TableCell
+                      style={{ border: "1px solid black" }}
+                      component="th"
+                      scope="row"
+                    >
+                      {application.applicationID}
+                    </TableCell>
+                    <TableCell
+                      style={{ border: "1px solid black" }}
+                      component="th"
+                      scope="row"
+                    >
+                      {application.title}
+                    </TableCell>
+                    <TableCell style={{ border: "1px solid black" }}>
+                      {application.userID}
+                    </TableCell>
+                    <TableCell style={{ border: "1px solid black" }}>
+                      {application.status}
+                    </TableCell>
+                    <TableCell style={{ border: "1px solid black" }}>
+                      <IconButton
+                        color="primary"
+                        aria-label="edit scheme"
+                        onClick={() => handleRejectApp(application._id)}
+                      >
+                        <DeleteIcon />
+                      </IconButton>
+                      <IconButton
+                        color="primary"
+                        aria-label="edit scheme"
+                        onClick={() => handleProcessApp(application._id)}
+                      >
+                        <AccessTimeIcon />
+                      </IconButton>
+                      <IconButton
+                        color="primary"
+                        aria-label="edit scheme"
+                        onClick={() => handleAcceptApp(application._id)}
+                      >
+                        <DoneIcon />
+                      </IconButton>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
+      </div>
     </>
   );
 };

@@ -36,11 +36,13 @@ function App() {
     <AppBar position="static" style={{ background: "transparent" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img
-            src={logo}
-            alt="Suvidha"
-            style={{ height: "100px", width: "auto", scale: "1.5" }}
-          />
+          <Link to="/adminHome">
+            <img
+              src={logo}
+              alt="Suvidha"
+              style={{ height: "100px", width: "auto", scale: "1.5" }}
+            />
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton

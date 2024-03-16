@@ -1,7 +1,10 @@
+import { Typography } from "@mui/material";
 const Main = () => {
   return (
     <>
-      <h1>Admin main</h1>
+      <div className="h-screen">
+        <Typography variant="h1">HELLO ADMIN</Typography>
+      </div>
     </>
   );
 };
