@@ -21,7 +21,7 @@ export default function LoginUser() {
         console.log(response);
         window.localStorage.setItem("user", JSON.stringify(response.data.user)); // Ensure you are accessing the user data correctly
         console.log(localStorage.getItem("user"));
-        navigate("/");
+        navigate("/user");
       } else {
         alert("Invalid credentials, please try again.");
       }
