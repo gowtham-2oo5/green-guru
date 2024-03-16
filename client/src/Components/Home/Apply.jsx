@@ -214,7 +214,7 @@ const Apply = () => {
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-blue-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
-                  Register
+                  Apply
                 </button>
               </div>
             </div>
@@ -226,15 +226,6 @@ const Apply = () => {
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
             >
               Home
-            </Link>
-          </p>
-          <p className="text-start text-sm text-gray-500">
-            Have an account?{" "}
-            <Link
-              to="/login"
-              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
-            >
-              Login here
             </Link>
           </p>
         </div>

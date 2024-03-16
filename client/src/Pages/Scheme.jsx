@@ -37,7 +37,18 @@ export default function Scheme() {
                     <h2 className="text-3xl font-semibold mb-4">
                       {item.title}
                     </h2>
-                    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded" onClick={handleClick}>
+                    <h3 className="text-md font-semibold mb-4 text-gray-700">
+                      {item.category}
+                    </h3>
+                    <div className="text-lg mb-4">{item.description}</div>
+                    <div className="text-xl mb-4">
+                      <span className="font-semibold">Eligibility:</span>{" "}
+                      <span className="font-sans">{item.eligibility}</span>
+                    </div>{" "}
+                    <button
+                      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+                      onClick={handleClick}
+                    >
                       Apply
                     </button>
                   </div>

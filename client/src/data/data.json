@@ -1,8 +1,8 @@
 [
     {
         "title" : "Beti Bachao Beti Padao (BBBP)",
-        "description": "Launched in 2015, Beti Bachao, Beti Padhao (BBBP) is a government initiative in India that translates to \"Save the Girl Child, Educate the Girl Child.\"" ,
-        "eligibility" : "",
+        "description": "Beti Bachao, Beti Padhao (BBBP), launched in 2015 by the Indian government, translates to \"Save the Girl Child, Educate the Girl Child.\" It's a multi-pronged initiative tackling critical issues related to gender equality",
+        "eligibility" : "The family must have a girl child below the age of 10.",
         "image": "https://raw.githubusercontent.com/satyabarghav/suvidha-static/main/beti%20bachao%20beti%20padao.jpg" ,
         "id": "",
         "category": "Women Empowerment"
