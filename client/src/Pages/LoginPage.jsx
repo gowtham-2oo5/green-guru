@@ -1,18 +1,32 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+// import Authenticate from "../Components/Authenticate";
 export default function LoginUser() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [formData, setFormData] = useState({});
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http:/localhost:3030/login-user");
-      console.log(response);
+      setFormData({ email, password });
+      const response = await axios.post(
+        "http://localhost:3030/login-user", // Ensure the URL is correct
+        formData
+      );
       console.log("Handle submit received", email, password);
+      if (response.status === 200) {
+        console.log(response);
+        window.localStorage.setItem("user", JSON.stringify(response.data.user)); // Ensure you are accessing the user data correctly
+        console.log(localStorage.getItem("user"));
+        navigate("/");
+      } else {
+        alert("Invalid credentials, please try again.");
+      }
     } catch (error) {
-      console.log(error);
+      console.error(error); // Use console.error to log errors
     }
   };
 
